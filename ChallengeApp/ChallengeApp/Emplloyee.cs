@@ -15,10 +15,6 @@ namespace ChallengeApp
 
         public void AddGrade(float grade)
         {
-            // 3.33
-            // 3
-            int valueInInt = (int)grade;
-            float f = (float)valueInInt;
 
             if (grade >= 0 && grade <=100)
             {
@@ -43,8 +39,32 @@ namespace ChallengeApp
             }
 
         }
-        
 
+        public void AddGrade(int grade)
+        {
+            float result = grade;
+            this.AddGrade(result);
+        }
+
+        public void AddGrade(long grade)
+        {
+
+            if (grade >= 0 && grade <= 100)
+            {
+                this.grades.Add(grade);
+            }
+            else
+            {
+                Console.WriteLine("invalid grade value");
+            }
+
+        }
+
+        public void AddGrade(double grade)
+        {
+            float result = (float)grade;
+            this.AddGrade(result);
+        }
 
         public Statistics GetStatistics()
         {
